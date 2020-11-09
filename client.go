@@ -8,7 +8,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/masterzen/winrm/soap"
+	"github.com/ivyentcn/winrm/soap"
 )
 
 // Client struct
@@ -133,7 +133,7 @@ func (c *Client) Run(command string, stdout io.Writer, stderr io.Writer) (int, e
 	wg.Wait()
 	cmd.Close()
 
-	return cmd.ExitCode(), cmd.err
+	return cmd.ExitCode(), cmd.Err
 }
 
 // RunWithString will run command on the the remote host, returning the process stdout and stderr
@@ -175,7 +175,7 @@ func (c *Client) RunWithString(command string, stdin string) (string, string, in
 	wg.Wait()
 	cmd.Close()
 
-	return outWriter.String(), errWriter.String(), cmd.ExitCode(), cmd.err
+	return outWriter.String(), errWriter.String(), cmd.ExitCode(), cmd.Err
 }
 
 //RunPSWithString will basically wrap your code to execute commands in powershell.exe. Default RunWithString
@@ -231,6 +231,6 @@ func (c Client) RunWithInput(command string, stdout, stderr io.Writer, stdin io.
 	wg.Wait()
 	cmd.Close()
 
-	return cmd.ExitCode(), cmd.err
+	return cmd.ExitCode(), cmd.Err
 
 }

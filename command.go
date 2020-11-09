@@ -29,7 +29,7 @@ type Command struct {
 	id       string
 	exitCode int
 	finished bool
-	err      error
+	Err      error
 
 	Stdin  *commandWriter
 	Stdout *commandReader
@@ -45,7 +45,7 @@ func newCommand(shell *Shell, ids string) *Command {
 		client:   shell.client,
 		id:       ids,
 		exitCode: 0,
-		err:      nil,
+		Err:      nil,
 		done:     make(chan struct{}),
 		cancel:   make(chan struct{}),
 	}
@@ -81,7 +81,7 @@ func fetchOutput(command *Command) {
 		default:
 			finished, err := command.slurpAllOutput()
 			if finished {
-				command.err = err
+				command.Err = err
 				close(command.done)
 				return
 			}

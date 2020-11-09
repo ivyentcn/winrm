@@ -1,6 +1,6 @@
 # WinRM for Go
 
-_Note_: if you're looking for the `winrm` command-line tool, this has been splitted from this project and is available at [winrm-cli](https://github.com/masterzen/winrm-cli)
+_Note_: if you're looking for the `winrm` command-line tool, this has been splitted from this project and is available at [winrm-cli](https://github.com/ivyentcn/winrm-cli)
 
 This is a Go library to execute remote commands on Windows machines through
 the use of WinRM/WinRS.
@@ -12,7 +12,7 @@ _Note_: this library doesn't support domain users (it doesn't support GSSAPI nor
 
 ## Contact
 
-- Bugs: https://github.com/masterzen/winrm/issues
+- Bugs: https://github.com/ivyentcn/winrm/issues
 
 
 ## Getting Started
@@ -46,7 +46,7 @@ For more information on WinRM, please refer to <a href="http://msdn.microsoft.co
 You can build winrm from source:
 
 ```sh
-git clone https://github.com/masterzen/winrm
+git clone https://github.com/ivyentcn/winrm
 cd winrm
 make
 ```
@@ -61,7 +61,7 @@ go version
 
 ## Command-line usage
 
-For command-line usage check the [winrm-cli project](https://github.com/masterzen/winrm-cli)
+For command-line usage check the [winrm-cli project](https://github.com/ivyentcn/winrm-cli)
 
 ## Library Usage
 
@@ -73,7 +73,7 @@ For the fast version (this doesn't allow to send input to the command) and it's 
 package main
 
 import (
-	"github.com/masterzen/winrm"
+	"github.com/ivyentcn/winrm"
 	"os"
 )
 
@@ -89,7 +89,7 @@ or
 ```go
 package main
 import (
-  "github.com/masterzen/winrm"
+  "github.com/ivyentcn/winrm"
   "fmt"
   "os"
 )
@@ -112,7 +112,7 @@ By passing a TransportDecorator in the Parameters struct it is possible to use d
 ```go
 package main
 import (
-  "github.com/masterzen/winrm"
+  "github.com/ivyentcn/winrm"
   "fmt"
   "os"
 )
@@ -140,7 +140,7 @@ By passing a Dial in the Parameters struct it is possible to use different diale
 package main
      
  import (
-    "github.com/masterzen/winrm"
+    "github.com/ivyentcn/winrm"
     "golang.org/x/crypto/ssh"
     "os"
  )
@@ -178,7 +178,7 @@ For a more complex example, it is possible to call the various functions directl
 package main
 
 import (
-  "github.com/masterzen/winrm"
+  "github.com/ivyentcn/winrm"
   "fmt"
   "bytes"
   "os"
@@ -213,7 +213,7 @@ For using HTTPS authentication with x 509 cert without checking the CA
 package main
 
 import (
-    "github.com/masterzen/winrm"
+    "github.com/ivyentcn/winrm"
     "io/ioutil"
     "log"
     "os"
@@ -266,7 +266,7 @@ For some additional dependencies, Go needs [Mercurial](http://mercurial.selenic.
 and [Bazaar](http://bazaar.canonical.com/en/) to be installed.
 Winrm itself doesn't require these, but a dependency of a dependency does.
 
-Next, clone this repository into `$GOPATH/src/github.com/masterzen/winrm` and
+Next, clone this repository into `$GOPATH/src/github.com/ivyentcn/winrm` and
 then just type `make`.
 
 You can run tests by typing `make test`.

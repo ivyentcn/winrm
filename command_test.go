@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/masterzen/winrm/soap"
+	"github.com/ivyentcn/winrm/soap"
 	. "gopkg.in/check.v1"
 )
 
@@ -295,5 +295,5 @@ func (s *WinRMSuite) TestEOFError(c *C) {
 
 	command.Wait()
 	c.Assert(command.exitCode, Equals, 16001)
-	c.Assert(command.err.Error(), Contains, "EOF")
+	c.Assert(command.Err.Error(), Contains, "EOF")
 }
